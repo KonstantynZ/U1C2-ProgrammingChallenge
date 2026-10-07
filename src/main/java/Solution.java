@@ -8,18 +8,21 @@ public class Solution {
      */
 
     public double average(double t1, double t2, double t3, double t4) {
-        // remove 0.0 and return your answer
-        return 0.0;
+        double avg = (t1+t2+t3+t4) / 4;
+        return avg;
     }
 
     public int roundAverage(double average) {
-        // remove 0 and return your answer
-        return 0;
+        int x = (int) Math.round(average);
+        return x;
     }
 
     public boolean isPassing(int roundedAverage) {
-        // remove false and return your answer
-        return false;
+        if (roundedAverage >= 65) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /*
@@ -27,14 +30,13 @@ public class Solution {
     */
 
     public double totalStock(int shares, double price) {
-        // remove 0.0 and return your answer
-        return 0.0;
+        return (shares*price);
     }
 
 
     public int roundValueChange(double totalStock) {
-        // remove 0 and return your answer
-        return 0;
+
+        return (int) Math.round(totalStock);
     }
 
     /*
@@ -42,8 +44,23 @@ public class Solution {
     */
    
     public double adjustDigits(double userDouble) {
-        // remove 0.0 and return your answer
-        return 0.0;
+        int usrDbl = (int)(userDouble*100);
+
+        int firstDigit = (usrDbl / 10000);
+        int secondDigit = (usrDbl % 10000) / 1000;
+        int thirdDigit = (usrDbl % 1000) / 100;
+        int fourthDigit = (usrDbl % 100) / 10;
+        int fifthDigit = (usrDbl % 10);
+
+        firstDigit = (firstDigit + 1) % 10;
+        secondDigit = (secondDigit + 1) % 10;
+        thirdDigit = (thirdDigit + 1) % 10;
+        fourthDigit = (fourthDigit +1) % 10;
+        fifthDigit = (fifthDigit + 1) % 10;
+
+    int finalValue = (firstDigit * 10000) + (secondDigit * 1000) + (thirdDigit * 100) + (fourthDigit * 10) + (fifthDigit);
+
+        return finalValue / 100.0;
     }
 
     public static void main(String[] args) {
